@@ -1,0 +1,19 @@
+<h1> All our flats </h1>
+
+  <div>
+    <% @flats.each do |flat| %>
+      <ul>
+        <li> <%= link_to flat.name, flat_path(flat) %></li>
+        <li> <%= flat.address %></li>
+        <div>
+          <li><i class="fas fa-users"></i>
+           <%= flat.number_of_guests %></li>
+          <li><i class="fas fa-euro-sign"></i>
+          <%=flat.price_per_night %></li>
+        </div>
+      </ul>
+    <% end %>
+  </div>
+
+  <%= link_to "New flat", new_flat_path  %>
+
